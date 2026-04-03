@@ -1,91 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
 
-        header {
-            background-color: #4267B2;
-            color: white;
-            padding: 20px 0;
-        }
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
 
-        #logo {
-            width: 150px;
-            height: auto;
-        }
+/* Caixa de login */
+.login-box {
+    width: 90%;
+    max-width: 350px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
-        main {
-            padding: 40px 20px;
-        }
+/* Logo */
+#logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
 
-        form {
-            display: inline-block;
-            margin-top: 20px;
-            text-align: left;
-        }
+/* Inputs */
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
 
-        input[type="text"], input[type="password"] {
-            width: 250px;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
+/* Botão */
+button {
+    width: 95%;
+    padding: 12px;
+    background: #4267B2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #4267B2;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+button:hover {
+    background: #365899;
+}
 
-        input[type="submit"]:hover {
-            background-color: #365899;
-        }
+/* Mensagem */
+#msg {
+    margin-top: 15px;
+    color: green;
+    display: none;
+}
+</style>
 
-        footer {
-            margin-top: 40px;
-            font-size: 14px;
-            color: #555;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <img src="static/images.png"> alt="Logo" id="logo">
-        <h1>Bem-vindo ao Meu Site</h1>
-    </header>
 
-    <main>
-        <p>Conteúdo do site aqui...</p>
+<div class="login-box">
 
-        <form action="#" method="POST">
-            <label for="user">Usuário:</label><br>
-            <input type="text" id="user" name="user" placeholder="Digite seu usuário"><br>
+    <!-- LOGO -->
+    <img src="static/images.png" alt="Logo" id="logo">
 
-            <label for="pass">Senha:</label><br>
-            <input type="password" id="pass" name="pass" placeholder="Digite sua senha"><br>
+    <h2>Bem-vindo</h2>
 
-            <input type="submit" value="Entrar">
-        </form>
-    </main>
+    <!-- FORMULÁRIO -->
+    <form onsubmit="return login()">
+        <input type="text" id="user" placeholder="Usuário" required>
+        <input type="password" id="pass" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+    </form>
 
-    <footer>
-        &copy; 2026 Meu Site
-    </footer>
+    <p id="msg">Login enviado com sucesso ✅</p>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+function login() {
+    let user = document.getElementById("user").value;
+    let pass = document.getElementById("pass").value;
+
+    if(user && pass){
+        document.getElementById("msg").style.display = "block";
+    }
+
+    return false; // impede reload da página
+}
+</script>
+
 </body>
 </html>
