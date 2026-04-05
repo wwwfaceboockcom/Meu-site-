@@ -1,89 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-.login-box {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 350px;
-}
-.login-box img {
-    width: 150px;
-    height: auto;
-    margin-bottom: 20px;
-}
-.login-box input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-button[type="submit"] {
-    background-color: #007BFF;
-    color: #fff;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-.create {
-    background: #4CAF50;
-    color: #fff;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-.create:hover {
-    background-color: #3e8e41;
-}
-a {
-    display: block;
-    margin-top: 12px;
-    color: #333;
-    text-decoration: none;
-    font-size: 14px;
-}
-hr {
-    margin: 15px 0;
-    border: 0;
-    border-top: 1px solid #ccc;
-}
-@media (max-width: 400px) {
-    .login-box { padding: 15px; }
-    input, button { padding: 8px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            max-width: 1000px;
+            margin: auto;
+        }
+        input, button {
+            width: 100%;  /* garante tamanho consistente */
+        }
+    </style>
 </head>
 <body>
-<div class="login-box">
-    <img src="static/mnvc3.png" alt="Logo" id="logo">
-    <form action="/login" method="POST">
-    <input type="text" name="user" placeholder="Email ou telefone">
-    <input type="password" name="pass" placeholder="Palavra-passe">
-    <button type="submit">Entrar</button>
+
+<h1>Meu site online 🚀</h1>
+<img src="static/images/logo.png" alt="Logo" style="max-width:200px;">
+
+<form>
+    <input type="text" placeholder="Usuário"><br><br>
+    <input type="password" placeholder="Senha"><br><br>
+    <button>Entrar</button>
 </form>
+
+</body>
+</html>
