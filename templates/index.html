@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Site</title>
+    <style>
+        body {
+            background:#f0f2f5;
+            font-family: Arial;
+            text-align:center;
+        }
+        .box {
+            background:white;
+            width:300px;
+            margin:100px auto;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+        }
+        input {
+            width:90%;
+            padding:10px;
+            margin:10px 0;
+        }
+        button {
+            padding:10px 20px;
+            background:#1877f2;
+            color:white;
+            border:none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <img src="{{ url_for('static', filename='logo.png') }}" width="120"><br><br>
+
+    <form action="/login" method="post">
+        <input name="email" placeholder="Email"><br>
+        <input name="senha" type="password" placeholder="Senha"><br>
+        <button type="submit">Entrar</button>
+    </form>
+</div>
+
+</body>
+</html>
